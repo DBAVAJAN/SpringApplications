@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WELCOME TO MY CALCI</title>
+    <style>
+        body {
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            max-width: 700px;
+            background: #fff;
+            margin: 50px auto;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.14);
+            overflow: hidden;
+        }
+        .image-block {
+            flex: 1.4;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-block img {
+            max-width: 100%;
+            max-height: 320px;
+            border-radius: 10px;
+        }
+        .form-block {
+            flex: 2;
+            padding: 30px 32px;
+        }
+        h1 {
+            margin-bottom: 14px;
+            color: #3c4560;
+        }
+        label {
+            font-size: 15px;
+            color: #444;
+        }
+        input[type=number] {
+            width: 140px;
+            padding: 7px;
+            margin: 8px 0 18px 0;
+            border-radius: 7px;
+            border: 1px solid #bbb;
+        }
+        .button-row {
+            margin-bottom: 10px;
+        }
+        input[type=submit] {
+            padding: 9px 20px;
+            border: none;
+            margin-right: 12px;
+            margin-bottom: 7px;
+            border-radius: 5px;
+            background: #2596be;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.16s;
+        }
+        input[type=submit]:hover {
+            background: #17658a;
+        }
+        .welcome {
+            margin-top: 18px;
+            font-size: 18px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Ram_Charan_in_2022.jpg" alt="Profile Image">
+        </div>
+        <div class="form-block">
+            <h1>NAMASKAR</h1>
+            <form action="/calci/calculate" method="post">
+                <label>ENTER NUM1</label><br>
+                <input type="number" name="num1" required><br>
+                <label>ENTER NUM2</label><br>
+                <input type="number" name="num2" required><br>
+                <div class="button-row">
+                    <input type="submit" value="add" name="operation">
+                    <input type="submit" value="sub" name="operation">
+                    <input type="submit" value="mul" name="operation">
+                    <input type="submit" value="div" name="operation">
+                </div>
+            </form>
+            <div class="welcome">Welcome to calci</div>
+        </div>
+    </div>
+</body>
+</html>

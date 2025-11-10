@@ -1,0 +1,36 @@
+package com.example.demo;
+
+import java.util.Date;
+
+import javax.crypto.SecretKey;
+
+import org.springframework.stereotype.Service;
+
+import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+@Service
+public class jwtService {
+	
+	
+	
+	String jwts(String username, String role) {
+		
+		 final SecretKey SIGNING_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+		 
+		JwtBuilder token =  Jwts.builder();
+		
+		token.setSubject(username);
+		token.claim("role", role);
+		token.setIssuedAt(new Date());
+		token.setExpiration(new Date(System.currentTimeMillis() + 3600000));
+		
+		token.signWith(SIGNING_KEY);
+		String token1 = token.compact();
+		return token1;
+	
+	}
+
+
+}
